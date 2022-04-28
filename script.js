@@ -2,34 +2,39 @@
 var searchInput = document.getElementById("search-city");
 var searchButton = document.getElementById("search-city-button");
 
+var weatherIcon = document.getElementById("weather-icon")
 var currentTemp = document.getElementById("current-temp");
 var currentHumidity = document.getElementById("current-humidity");
 var currentWindSpeed = document.getElementById("current-wind-speed");
 var uvIndex = document.getElementById("uv-index");
 
+var weatherIcon1 = document.getElementById("weather-icon-1")
 var currentTemp1 = document.getElementById("current-temp-1");
 var currentHumidity1 = document.getElementById("current-humidity-1");
 var currentWindSpeed1 = document.getElementById("current-wind-speed-1");
 
+var weatherIcon2 = document.getElementById("weather-icon-2")
 var currentTemp2 = document.getElementById("current-temp-2");
 var currentHumidity2 = document.getElementById("current-humidity-2");
 var currentWindSpeed2 = document.getElementById("current-wind-speed-2");
 
+var weatherIcon3 = document.getElementById("weather-icon-3")
 var currentTemp3 = document.getElementById("current-temp-3");
 var currentHumidity3 = document.getElementById("current-humidity-3");
 var currentWindSpeed3 = document.getElementById("current-wind-speed-3");
 
+var weatherIcon4 = document.getElementById("weather-icon-4")
 var currentTemp4 = document.getElementById("current-temp-4");
 var currentHumidity4 = document.getElementById("current-humidity-4");
 var currentWindSpeed4 = document.getElementById("current-wind-speed-4");
 
+var weatherIcon5 = document.getElementById("weather-icon-5")
 var currentTemp5 = document.getElementById("current-temp-5");
 var currentHumidity5 = document.getElementById("current-humidity-5");
 var currentWindSpeed5 = document.getElementById("current-wind-speed-5");
 
 var weatherContent = document.getElementById("weather-content");
 var currentCity = document.getElementById("current-city");
-var weatherIcon = document.getElementById("weather-icon")
 
 //makes defined variable available to global scope
 var city;
@@ -75,9 +80,7 @@ function renderWeather(forecast) {
     var date = dateFormat[0]
 
     var humidity = forecast.current.humidity
-
     var wind = forecast.current.wind_speed
-
     var uv = forecast.current.uvi
 
     // displays appropriate weather icon from OpenWeather weather icons api
@@ -93,6 +96,18 @@ function renderWeather(forecast) {
     uvIndex.innerText = uv 
 
     //displays day 1 forecast
+    var icon1 = forecast.daily[0].weather[0].icon
+    var iconURL = `http://openweathermap.org/img/wn/${icon1}@2x.png`
+    weatherIcon1.setAttribute("src", iconURL)
+
+    //is this right?
+    var timeStamp1 = forecast.daily[0].dt
+    var milliseconds1 = timeStamp1 * 1000
+    var dateObject1 = new Date(milliseconds1)
+    var dateFormat1 = dateObject1.toLocaleString()
+    dateFormat1 = dateFormat1.split(",")
+    var date = dateFormat1[0]
+
     var temp1 = Math.round(((forecast.daily[0].temp.max - 273.15)*9) /5 + 32)
     var humidity1 = forecast.daily[0].humidity
     var wind1 = forecast.daily[0].wind_speed
@@ -102,6 +117,10 @@ function renderWeather(forecast) {
     currentWindSpeed1.innerText = wind1
 
     //displays day 2 forecast
+    var icon2 = forecast.daily[1].weather[0].icon
+    var iconURL = `http://openweathermap.org/img/wn/${icon2}@2x.png`
+    weatherIcon2.setAttribute("src", iconURL)
+
     var temp2 = Math.round(((forecast.daily[1].temp.max - 273.15)*9) /5 + 32)
     var humidity2 = forecast.daily[1].humidity
     var wind2 = forecast.daily[1].wind_speed
@@ -111,6 +130,10 @@ function renderWeather(forecast) {
     currentWindSpeed2.innerText = wind2
 
     //displays day 3 forecast
+    var icon3 = forecast.daily[2].weather[0].icon
+    var iconURL = `http://openweathermap.org/img/wn/${icon3}@2x.png`
+    weatherIcon3.setAttribute("src", iconURL)
+
     var temp3 = Math.round(((forecast.daily[2].temp.max - 273.15)*9) /5 + 32)
     var humidity3 = forecast.daily[2].humidity
     var wind3 = forecast.daily[2].wind_speed
@@ -120,6 +143,10 @@ function renderWeather(forecast) {
     currentWindSpeed3.innerText = wind3
 
     //displays day 4 forecast
+    var icon4 = forecast.daily[3].weather[0].icon
+    var iconURL = `http://openweathermap.org/img/wn/${icon4}@2x.png`
+    weatherIcon4.setAttribute("src", iconURL)
+
     var temp4 = Math.round(((forecast.daily[3].temp.max - 273.15)*9) /5 + 32)
     var humidity4 = forecast.daily[3].humidity
     var wind4 = forecast.daily[3].wind_speed
@@ -129,6 +156,10 @@ function renderWeather(forecast) {
     currentWindSpeed4.innerText = wind4
 
     //displays day 5 forecast
+    var icon5 = forecast.daily[4].weather[0].icon
+    var iconURL = `http://openweathermap.org/img/wn/${icon5}@2x.png`
+    weatherIcon5.setAttribute("src", iconURL)
+
     var temp5 = Math.round(((forecast.daily[4].temp.max - 273.15)*9) /5 + 32)
     var humidity5 = forecast.daily[4].humidity
     var wind5 = forecast.daily[4].wind_speed
@@ -140,7 +171,6 @@ function renderWeather(forecast) {
     //remove the hide class
     weatherContent.classList.remove("hide")
 }
-
 
 //attach event listener to search button
 searchButton.addEventListener("click", getCity);
