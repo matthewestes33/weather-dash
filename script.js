@@ -70,8 +70,8 @@ function getWeather(cityInfo) {
 function renderWeather(forecast) {
     console.log(forecast)
     // declare variables for all relevant weather information
-    var temp = Math.round(((forecast.current.temp - 273.15)*9) /5 + 32)
- 
+    var temp = Math.round(((forecast.current.temp - 273.15) * 9) / 5 + 32)
+
     var timeStamp = forecast.current.dt
     var milliseconds = timeStamp * 1000
     var dateObject = new Date(milliseconds)
@@ -93,7 +93,7 @@ function renderWeather(forecast) {
     currentTemp.innerText = temp
     currentHumidity.innerText = humidity
     currentWindSpeed.innerText = wind
-    uvIndex.innerText = uv 
+    uvIndex.innerText = uv
 
     //displays day 1 forecast
     var icon1 = forecast.daily[0].weather[0].icon
@@ -107,11 +107,12 @@ function renderWeather(forecast) {
     var dateFormat1 = dateObject1.toLocaleString()
     dateFormat1 = dateFormat1.split(",")
     var date = dateFormat1[0]
+    //
 
-    var temp1 = Math.round(((forecast.daily[0].temp.max - 273.15)*9) /5 + 32)
+    var temp1 = Math.round(((forecast.daily[0].temp.max - 273.15) * 9) / 5 + 32)
     var humidity1 = forecast.daily[0].humidity
     var wind1 = forecast.daily[0].wind_speed
-    
+
     currentTemp1.innerText = temp1
     currentHumidity1.innerText = humidity1
     currentWindSpeed1.innerText = wind1
@@ -121,10 +122,10 @@ function renderWeather(forecast) {
     var iconURL = `http://openweathermap.org/img/wn/${icon2}@2x.png`
     weatherIcon2.setAttribute("src", iconURL)
 
-    var temp2 = Math.round(((forecast.daily[1].temp.max - 273.15)*9) /5 + 32)
+    var temp2 = Math.round(((forecast.daily[1].temp.max - 273.15) * 9) / 5 + 32)
     var humidity2 = forecast.daily[1].humidity
     var wind2 = forecast.daily[1].wind_speed
-    
+
     currentTemp2.innerText = temp2
     currentHumidity2.innerText = humidity2
     currentWindSpeed2.innerText = wind2
@@ -134,10 +135,10 @@ function renderWeather(forecast) {
     var iconURL = `http://openweathermap.org/img/wn/${icon3}@2x.png`
     weatherIcon3.setAttribute("src", iconURL)
 
-    var temp3 = Math.round(((forecast.daily[2].temp.max - 273.15)*9) /5 + 32)
+    var temp3 = Math.round(((forecast.daily[2].temp.max - 273.15) * 9) / 5 + 32)
     var humidity3 = forecast.daily[2].humidity
     var wind3 = forecast.daily[2].wind_speed
-    
+
     currentTemp3.innerText = temp3
     currentHumidity3.innerText = humidity3
     currentWindSpeed3.innerText = wind3
@@ -147,10 +148,10 @@ function renderWeather(forecast) {
     var iconURL = `http://openweathermap.org/img/wn/${icon4}@2x.png`
     weatherIcon4.setAttribute("src", iconURL)
 
-    var temp4 = Math.round(((forecast.daily[3].temp.max - 273.15)*9) /5 + 32)
+    var temp4 = Math.round(((forecast.daily[3].temp.max - 273.15) * 9) / 5 + 32)
     var humidity4 = forecast.daily[3].humidity
     var wind4 = forecast.daily[3].wind_speed
-    
+
     currentTemp4.innerText = temp4
     currentHumidity4.innerText = humidity4
     currentWindSpeed4.innerText = wind4
@@ -160,17 +161,26 @@ function renderWeather(forecast) {
     var iconURL = `http://openweathermap.org/img/wn/${icon5}@2x.png`
     weatherIcon5.setAttribute("src", iconURL)
 
-    var temp5 = Math.round(((forecast.daily[4].temp.max - 273.15)*9) /5 + 32)
+    var temp5 = Math.round(((forecast.daily[4].temp.max - 273.15) * 9) / 5 + 32)
     var humidity5 = forecast.daily[4].humidity
     var wind5 = forecast.daily[4].wind_speed
-    
+
     currentTemp5.innerText = temp5
     currentHumidity5.innerText = humidity5
     currentWindSpeed5.innerText = wind5
 
-    //remove the hide class
+    //remove the hide classes
     weatherContent.classList.remove("hide")
+    //is this one working?
+    searchInput.classList.remove("hide")
+    //
 }
 
 //attach event listener to search button
 searchButton.addEventListener("click", getCity);
+
+//to do
+//get the date on five-day forecast
+//list five-day forecast across
+//unhide search to be stored in local storage (check out attempt)
+//store search results locally
