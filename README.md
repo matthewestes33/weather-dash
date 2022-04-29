@@ -2,15 +2,15 @@
 
 ## Weather Dash
 
-This project is built to all travelers to see the weather outlook for multiple cities (via OpenWeather APIs) so that they can plan accordingly.
+This project is built so all travelers can see the weather outlook for multiple cities (via OpenWeather APIs) so that they can plan accordingly.
 
 ## Mock-up
 
-![Weather Dash.](images\five-day-forecast.jpg)
+![Weather Dash.](,/images/five-day-forecast.jpg)
 
 ## Installation
 
-The AQI tracker is here: https://matthewestes33.github.io/weather-dash/
+The weather dashboard is here: https://matthewestes33.github.io/weather-dash/
 
 All elements of the project can be examined here: https://github.com/matthewestes33/weather-dash/
 
