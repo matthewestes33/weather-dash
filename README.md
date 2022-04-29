@@ -6,7 +6,7 @@ This project is built so all travelers can see the weather outlook for multiple 
 
 ## Mock-up
 
-![Weather Dash.](,/images/five-day-forecast.jpg)
+![Weather Dash.](./images/five-day-forecast.jpg)
 
 ## Installation
 
