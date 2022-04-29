@@ -228,7 +228,5 @@ function renderWeather(forecast) {
 searchButton.addEventListener("click", getCity);
 
 //to do
-//get the date on five-day forecast
-//list five-day forecast across
 //unhide search to be stored in local storage (check out attempt)
 //store search results locally
