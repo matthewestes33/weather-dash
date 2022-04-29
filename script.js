@@ -54,7 +54,7 @@ function getCity() {
     city = searchInput.value
     console.log(city)
     // mdn docs for using fetch to call api 
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => getWeather(data));
 }
@@ -93,7 +93,7 @@ function renderWeather(forecast) {
 
     // displays appropriate weather icon from OpenWeather weather icons api
     var icon = forecast.current.weather[0].icon
-    var iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
     weatherIcon.setAttribute("src", iconURL)
 
     //displays today's weather information
@@ -104,7 +104,7 @@ function renderWeather(forecast) {
 
     //displays day 1 icon
     var icon1 = forecast.daily[1].weather[0].icon
-    var iconURL = `http://openweathermap.org/img/wn/${icon1}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${icon1}@2x.png`
     weatherIcon1.setAttribute("src", iconURL)
 
     //displays day 1 time
@@ -127,7 +127,7 @@ function renderWeather(forecast) {
 
     //displays day 2 icon
     var icon2 = forecast.daily[2].weather[0].icon
-    var iconURL = `http://openweathermap.org/img/wn/${icon2}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${icon2}@2x.png`
     weatherIcon2.setAttribute("src", iconURL)
 
     //displays day 2 time
@@ -150,7 +150,7 @@ function renderWeather(forecast) {
 
     //displays day 3 icon
     var icon3 = forecast.daily[3].weather[0].icon
-    var iconURL = `http://openweathermap.org/img/wn/${icon3}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${icon3}@2x.png`
     weatherIcon3.setAttribute("src", iconURL)
 
     //displays day 3 time
@@ -173,7 +173,7 @@ function renderWeather(forecast) {
 
     //displays day 4 icon
     var icon4 = forecast.daily[4].weather[0].icon
-    var iconURL = `http://openweathermap.org/img/wn/${icon4}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${icon4}@2x.png`
     weatherIcon4.setAttribute("src", iconURL)
 
     //displays day 4 time
@@ -196,7 +196,7 @@ function renderWeather(forecast) {
 
     //displays day 5 icon
     var icon5 = forecast.daily[5].weather[0].icon
-    var iconURL = `http://openweathermap.org/img/wn/${icon5}@2x.png`
+    var iconURL = `https://openweathermap.org/img/wn/${icon5}@2x.png`
     weatherIcon5.setAttribute("src", iconURL)
 
     //displays day 5 time
